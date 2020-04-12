@@ -11,7 +11,7 @@ export const css = new CSSPlaybackModifier()
 export const date = new DatePlaybackModifier()
 export const timeout = new TimeoutPlaybackModifier()
 
-export default class Timing {
+class Timing {
 
   /**
    * Set the global playback-rate of the webpage
@@ -26,13 +26,14 @@ export default class Timing {
   }
 }
 
+const instance = new Timing()
+export default instance;
+
 /*
  Setup an instance of
  timing on the window object
  */
 (function () {
-  if (typeof window === 'undefined') {
-    throw new Error(`Timing can only be run in the browser. 'window' is undefined.`)
-  }
-  (window as any).timing = new Timing()
+  if (typeof window === 'undefined') return
+  (window as any).timing = instance
 })()

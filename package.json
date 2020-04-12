@@ -1,16 +1,15 @@
 {
-  "name": "js-timing",
+  "name": "bullet-timing",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.prod.js",
     "build:dev": "webpack --config webpack.dev.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/axelboberg/js-timing.git"
+    "url": "git+https://github.com/axelboberg/bullet-time.git"
   },
   "keywords": [
     "js",
@@ -19,9 +18,9 @@
   "author": "Axel Boberg",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/axelboberg/js-timing/issues"
+    "url": "https://github.com/axelboberg/bullet-time/issues"
   },
-  "homepage": "https://github.com/axelboberg/js-timing#readme",
+  "homepage": "https://github.com/axelboberg/bullet-time#readme",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",

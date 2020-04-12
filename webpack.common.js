@@ -8,8 +8,8 @@ const path = require('path')
 module.exports = {
   entry: './',
   output: {
-    path: path.join(__dirname, '/dist'),
-    filename: 'toolbox.js'
+    path: path.join(__dirname, '/bin'),
+    filename: 'index.js'
   },
   module: {
     rules: [

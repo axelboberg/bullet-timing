@@ -2,7 +2,7 @@
 node_modules
 
 # build
-dist
+bin
 
 # macos
 *.DS_Store
