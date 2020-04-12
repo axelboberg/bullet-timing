@@ -2,6 +2,7 @@
 <html>
   <head>
     <script src="../dist/toolbox.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <style>
       .Square {
@@ -9,6 +10,9 @@
         height: 200px;
 
         background: red;
+      }
+
+      .u-anim--css {
         animation: spin 1s infinite linear;
       }
 
@@ -19,6 +23,44 @@
     </style>
   </head>
   <body>
-    <div class="Square"></div>
+    <div class="Square u-anim--css"></div>
+    <div class="Square u-anim--raf"></div>
+    <div class="Square u-anim--gsap"></div>
+    <script defer>
+      timing.setPlaybackRate(0.1)
+      console.time('start')
+
+      /*
+      Setup an animation using
+      requestAnimationFrame
+      */
+      const el = document.querySelector('.u-anim--raf')
+      const start = new Date()
+      const speed = 0.4
+
+      function frame () {
+        el.style.transform = `rotate(${((Date.now() - start) / 1000) * 360}deg)`
+        requestAnimationFrame(frame)
+      }
+      requestAnimationFrame(frame)
+
+      /*
+      Setup an animation using GSAP
+      */
+      function setupGsap (selector) {
+        gsap.fromTo(selector, {
+          rotate: 0
+        }, {
+          duration: 1,
+          rotate: 360,
+          ease: 'linear',
+          onComplete: () => setupGsap(selector)
+        })
+      }
+      setTimeout(() => {
+        console.timeEnd('start')
+        setupGsap('.u-anim--gsap')
+      }, 1000)
+    </script>
   </body>
 </html>

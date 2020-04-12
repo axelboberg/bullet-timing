@@ -4,15 +4,29 @@
  */
 
 import PlaybackModifier from './PlaybackModifier'
+const START_DATE = new Date()
 
 export default class DatePlaybackModifier implements PlaybackModifier {
-  rate: number = 1
+  static rate = 1
 
-  setPlaybackRate (rate) {
-
+  /**
+   * Set the playback rate of
+   * the global Date object
+   * @param rate 
+   */
+  setPlaybackRate (rate: number) {
+    DatePlaybackModifier.rate = rate
   }
+}
 
-  getPlaybackRate () {
-    return this.rate
-  }
+/*
+Override the default Date.now-function to
+return a modified number of milliseconds that's
+either slowed down or sped up based on the
+playback rate
+*/
+Date.now = function (): number {
+  const real = (new Date()).getTime()
+  const start = START_DATE.getTime()
+  return (real - start) * DatePlaybackModifier.rate + start
 }

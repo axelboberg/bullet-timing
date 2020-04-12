@@ -4,7 +4,5 @@
  */
 
 export default interface PlaybackModifier {
-  rate: number
-  getPlaybackRate (): number
   setPlaybackRate (rate: number)
 }

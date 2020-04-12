@@ -91,8 +91,4 @@ export default class CSSPlaybackModifier implements PlaybackModifier {
 
     this.rate = rate
   }
-
-  getPlaybackRate () {
-    return this.rate
-  }
 }

@@ -5,9 +5,11 @@
 
 import CSSPlaybackModifier from './lib/CSS'
 import DatePlaybackModifier from './lib/Date'
+import TimeoutPlaybackModifier from './lib/Timeout'
 
 export const css = new CSSPlaybackModifier()
 export const date = new DatePlaybackModifier()
+export const timeout = new TimeoutPlaybackModifier()
 
 export default class Timing {
 
@@ -16,8 +18,11 @@ export default class Timing {
    * @param rate A factor
    */
   setPlaybackRate (rate: number) {
-    date.setPlaybackRate(rate)
+    if (rate == 0) rate = 0.001
+
     css.setPlaybackRate(rate)
+    date.setPlaybackRate(rate)
+    timeout.setPlaybackRate(rate)
   }
 }
 
