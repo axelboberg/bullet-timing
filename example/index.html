@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../dist/toolbox.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .Square {
+        width: 200px;
+        height: 200px;
+
+        background: red;
+        animation: spin 1s infinite linear;
+      }
+
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Square"></div>
+  </body>
+</html>
