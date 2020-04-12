@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/axelboberg/bullet-time.git"
+    "url": "git+https://github.com/axelboberg/bullet-timing.git"
   },
   "keywords": [
     "js",
@@ -18,9 +18,9 @@
   "author": "Axel Boberg",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/axelboberg/bullet-time/issues"
+    "url": "https://github.com/axelboberg/bullet-timing/issues"
   },
-  "homepage": "https://github.com/axelboberg/bullet-time#readme",
+  "homepage": "https://github.com/axelboberg/bullet-timing#readme",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",

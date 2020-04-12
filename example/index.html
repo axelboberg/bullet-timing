@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="../dist/toolbox.js"></script>
+    <script src="../bin/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <style>
@@ -27,8 +27,7 @@
     <div class="Square u-anim--raf"></div>
     <div class="Square u-anim--gsap"></div>
     <script defer>
-      timing.setPlaybackRate(0.1)
-      console.time('start')
+      //timing.setPlaybackRate(0.1)
 
       /*
       Setup an animation using
@@ -58,7 +57,6 @@
         })
       }
       setTimeout(() => {
-        console.timeEnd('start')
         setupGsap('.u-anim--gsap')
       }, 1000)
     </script>
