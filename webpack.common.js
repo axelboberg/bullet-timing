@@ -6,7 +6,7 @@
 const path = require('path')
 
 module.exports = {
-  entry: './',
+  entry: './index.ts',
   output: {
     path: path.join(__dirname, '/bin'),
     filename: 'index.js'
