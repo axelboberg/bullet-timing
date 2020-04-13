@@ -4,7 +4,7 @@
  */
 
 import PlaybackModifier from './PlaybackModifier'
-const START_DATE = new Date()
+let START_DATE = new Date()
 
 export default class DatePlaybackModifier implements PlaybackModifier {
   static rate = 1
@@ -15,6 +15,7 @@ export default class DatePlaybackModifier implements PlaybackModifier {
    * @param rate 
    */
   setPlaybackRate (rate: number) {
+    START_DATE = new Date()
     DatePlaybackModifier.rate = rate
   }
 }
