@@ -58,7 +58,9 @@ export default class CSSPlaybackModifier implements PlaybackModifier {
         let rules
         try {
           rules = sheet.rules
-        } catch (_) {}
+        } catch (_) {
+          console.warn('[Timing] Unable to access stylesheet, it may be due to a CORS policy')
+        }
         return rules
       })
       .filter(rules => rules)
