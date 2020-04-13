@@ -12,7 +12,6 @@ export const date = new DatePlaybackModifier()
 export const timeout = new TimeoutPlaybackModifier()
 
 class Timing {
-
   /**
    * Set the global playback-rate of the webpage
    * @param rate A factor
@@ -35,5 +34,9 @@ export default instance;
  */
 (function () {
   if (typeof window === 'undefined') return
-  (window as any).timing = instance
+  const w = (window as any)
+  w.timing = instance
+  w.timing.css = css
+  w.timing.date = date
+  w.timing.timeout = timeout
 })()
