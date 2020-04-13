@@ -42,7 +42,7 @@ function getNumericUnit (val: CSSNumericValue): string {
 }
 
 export default class CSSPlaybackModifier implements PlaybackModifier {
-  rate = 1
+  static rate = 1
 
   /**
    * Set the playback-rate of CSS
@@ -81,7 +81,7 @@ export default class CSSPlaybackModifier implements PlaybackModifier {
             if (isNaN(n)) return v
 
             const unit = getNumericUnit(v)
-            return ((n * this.rate) / rate) + unit
+            return ((n * CSSPlaybackModifier.rate) / rate) + unit
           })
           .join(' ')
 
@@ -89,6 +89,6 @@ export default class CSSPlaybackModifier implements PlaybackModifier {
       }
     }
 
-    this.rate = rate
+    CSSPlaybackModifier.rate = rate
   }
 }
